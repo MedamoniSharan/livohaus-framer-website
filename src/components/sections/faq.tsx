@@ -99,7 +99,10 @@ export default function Faq() {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
-    <section id="faq" className="bg-[#fdf8f3] py-20 lg:py-[120px] relative overflow-hidden">
+    <section
+      id="faq"
+      className="bg-[#fdf8f3] dark:bg-[#0b0b0b] py-20 lg:py-[120px] relative overflow-hidden"
+    >
       {/* Animated background elements */}
       <motion.div
         className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
@@ -128,7 +131,7 @@ export default function Faq() {
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-6 text-[48px] font-bold leading-tight tracking-[-0.01em] text-text-dark"
+            className="mb-6 text-[48px] font-bold leading-tight tracking-[-0.01em] text-text-dark dark:text-white"
           >
             Frequently Asked Questions
           </motion.h2>
@@ -136,7 +139,7 @@ export default function Faq() {
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg leading-relaxed text-muted-foreground"
+            className="text-lg leading-relaxed text-muted-foreground dark:text-neutral-300"
           >
             We know home renovation comes with big questions. Here are answers to the ones we hear most — so you can feel confident from the start.
           </motion.p>
@@ -146,7 +149,7 @@ export default function Faq() {
           initial={{ opacity: 0, y: 50 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mx-auto max-w-[1000px] bg-white rounded-2xl shadow-lg"
+          className="mx-auto max-w-[1000px] bg-white dark:bg-neutral-900 rounded-2xl shadow-lg"
         >
           <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
             {faqData.map((item, index) => (

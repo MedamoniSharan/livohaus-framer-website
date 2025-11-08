@@ -1,8 +1,8 @@
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import ServicesHero from "@/components/sections/services-hero";
+import LogoMarquee from "@/components/sections/logo-marquee";
 import Services from "@/components/sections/services";
-import ProcessSection from "@/components/sections/process";
 import CtaBook from "@/components/sections/cta-book";
 
 export default function ServicesPage() {
@@ -11,8 +11,8 @@ export default function ServicesPage() {
       <Navigation />
       <main className="pt-[120px]">
         <ServicesHero />
+        <LogoMarquee />
         <Services />
-        <ProcessSection />
         <CtaBook />
       </main>
       <Footer />

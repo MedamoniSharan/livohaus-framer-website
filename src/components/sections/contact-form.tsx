@@ -286,15 +286,15 @@ const ContactFormSection = () => {
                 transition={{ delay: 1.1 }}
               >
                 <motion.button
-                  type="submit"
+                    type="submit"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="request-quote-button w-full justify-center mt-2"
-                >
+                  >
                   <span className="request-quote-text">Request Free Quote</span>
                   <span className="request-quote-icon">
                     <ArrowRight className="h-5 w-5" />
-                  </span>
+                    </span>
                 </motion.button>
               </motion.div>
             </form>

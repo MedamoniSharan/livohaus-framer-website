@@ -2,6 +2,7 @@
 
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import {
   ArrowRight,
   Facebook,
@@ -53,15 +54,29 @@ const Footer = () => {
 
       {/* Footer Content */}
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 lg:px-20 pt-24 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 mb-16">
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="lg:col-span-2"
           >
-            <h2 className="text-4xl md:text-5xl font-semibold mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="relative h-14 w-14 overflow-hidden rounded-xl bg-white/90 p-1 shadow-md dark:bg-white/10">
+                <Image
+                  src="/logo.jpg"
+                  alt="ASL Realtors logo"
+                  fill
+                  sizes="56px"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <span className="text-xl font-semibold tracking-wide text-white">ASL Realtors</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-semibold leading-snug text-white mb-8">
               Your trusted partner in
               <br /> home renovation & interiors.
             </h2>
@@ -176,7 +191,7 @@ const Footer = () => {
               href="#"
               className="text-[#FF5C28] hover:underline transition-colors"
             >
-              Arnab
+              OptiWebtrix Team
             </a>
           </p>
           <p>

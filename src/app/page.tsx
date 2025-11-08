@@ -1,5 +1,6 @@
 import Navigation from "@/components/sections/navigation";
 import Hero from "@/components/sections/hero";
+import LogoMarquee from "@/components/sections/logo-marquee";
 import StatsSection from "@/components/sections/stats";
 import AboutSection from "@/components/sections/about";
 import Services from "@/components/sections/services";
@@ -16,6 +17,7 @@ export default function Home() {
       <Navigation />
       <main className="pt-0">
         <Hero />
+        <LogoMarquee />
         <StatsSection />
         <AboutSection />
         <Services />

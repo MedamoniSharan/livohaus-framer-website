@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Sun, Moon } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/properties", label: "Properties" },
   { href: "/calculators", label: "Calculators" },
@@ -89,7 +89,17 @@ export default function Navigation() {
           className="flex items-center gap-3 transition-transform duration-300 hover:opacity-95"
           aria-label="ASL Realtors home"
         >
-          <span className={`text-2xl font-semibold tracking-wide ${baseTextColor}`}>ASL Realtors</span>
+          <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-white/90 p-1 shadow-md dark:bg-white/10">
+            <Image
+              src="/logo.jpg"
+              alt="ASL Realtors logo"
+              fill
+              sizes="48px"
+              className="object-contain"
+              priority
+            />
+          </div>
+          <span className={`text-xl sm:text-2xl font-semibold tracking-wide ${baseTextColor}`}>ASL Realtors</span>
         </Link>
 
         <div className="hidden flex-1 items-center justify-center gap-12 lg:flex">
