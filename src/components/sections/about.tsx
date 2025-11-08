@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import { Home } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 interface StatCounterProps {
@@ -15,53 +15,79 @@ interface StatCounterProps {
 const StatCounter: React.FC<StatCounterProps> = ({ value, suffix, label }) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: false, amount: 0.6 });
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          let current = 0;
-          const target = value;
-          const duration = 2000;
-          const stepTime = 20;
-          const totalSteps = duration / stepTime;
-          const increment = target / totalSteps;
+    let frameId: number | undefined;
 
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              setCount(target);
-              clearInterval(timer);
-            } else {
-              setCount(Math.ceil(current));
-            }
-          }, stepTime);
-          
-          observer.disconnect();
+    if (isInView) {
+      let startTime: number | undefined;
+      const duration = 1500;
+
+      const animate = (timestamp: number) => {
+        if (startTime === undefined) {
+          startTime = timestamp;
         }
-      },
-      { threshold: 0.1 }
-    );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setCount(Math.round(eased * value));
+
+        if (progress < 1) {
+          frameId = requestAnimationFrame(animate);
+        } else {
+          setCount(value);
+        }
+      };
+
+      frameId = requestAnimationFrame(animate);
+    } else {
+      setCount(0);
     }
 
-    return () => observer.disconnect();
-  }, [value]);
+    return () => {
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
+    };
+  }, [isInView, value]);
 
   return (
     <motion.div
       ref={ref}
-      whileHover={{ scale: 1.05, y: -5 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      initial={{ opacity: 0.4, y: 10 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.4, y: 10 }}
+      transition={{ duration: 0.4 }}
+      whileHover={{ scale: 1.05, y: isInView ? -5 : 0 }}
       className="flex flex-col items-start"
     >
-      <p className="text-4xl md:text-5xl font-bold text-text-dark dark:text-white transition-colors duration-300">
+      <motion.p
+        initial={false}
+        animate={isInView ? { opacity: 1 } : { opacity: 0.3 }}
+        transition={{ duration: 0.3 }}
+        className="text-4xl md:text-5xl font-bold text-text-dark dark:text-white transition-colors duration-300"
+      >
         {count}
-        {suffix && <span className="text-primary">{suffix}</span>}
-      </p>
-      <p className="mt-2 text-body-regular text-text-body dark:text-neutral-400 transition-colors duration-300">{label}</p>
+        {suffix && (
+          <motion.span
+            initial={false}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+            transition={{ duration: 0.35, delay: isInView ? 0.15 : 0 }}
+            className="text-primary"
+          >
+            {suffix}
+          </motion.span>
+        )}
+      </motion.p>
+      <motion.p
+        initial={false}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
+        transition={{ duration: 0.3, delay: isInView ? 0.1 : 0 }}
+        className="mt-2 text-body-regular text-text-body dark:text-neutral-400 transition-colors duration-300"
+      >
+        {label}
+      </motion.p>
     </motion.div>
   );
 };

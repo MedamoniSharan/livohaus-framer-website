@@ -127,7 +127,7 @@ const Hero = () => {
                 >
                   <span className="request-quote-text">Request Free Quote</span>
                   <span className="request-quote-icon">
-                    <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5" />
                   </span>
                 </motion.a>
               </motion.div>

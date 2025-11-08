@@ -2,6 +2,7 @@
 
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import {
   ArrowRight,
   Facebook,
@@ -60,8 +61,22 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="lg:col-span-2"
           >
-            <h2 className="text-4xl md:text-5xl font-semibold mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="relative h-14 w-14 overflow-hidden rounded-xl bg-white/90 p-1 shadow-md dark:bg-white/10">
+                <Image
+                  src="/logo.jpg"
+                  alt="ASL Realtors logo"
+                  fill
+                  sizes="56px"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <span className="text-xl font-semibold tracking-wide text-white">ASL Realtors</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-semibold leading-snug mb-8">
               Your trusted partner in
               <br /> home renovation & interiors.
             </h2>
@@ -176,7 +191,7 @@ const Footer = () => {
               href="#"
               className="text-[#FF5C28] hover:underline transition-colors"
             >
-              Arnab
+              OptiWebtrix Team
             </a>
           </p>
           <p>
