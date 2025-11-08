@@ -11,7 +11,7 @@ const testimonialsData = [
     quote: "Great communication, excellent quality — our remodel feels flawless and well-crafted.",
     name: "Jason P.",
     location: "Los Angeles",
-    avatar: "https://framerusercontent.com/images/15Lp1E78tHQQO5GUC5WbMqzR5U.png",
+    avatar: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=96&h=96&q=80",
     rating: 5,
   },
   {
@@ -19,7 +19,7 @@ const testimonialsData = [
     quote: "ASL Realtors was professional, fast, and the final result truly blew us away. Fully Satisfied!",
     name: "Priya R.",
     location: "Sacramento",
-    avatar: "https://framerusercontent.com/images/I8tA6fJg2iCEnJzD9EaGPlz4s.png",
+    avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=96&h=96&q=80",
     rating: 5,
   },
   {
@@ -27,7 +27,7 @@ const testimonialsData = [
     quote: "They handled everything from design to build. We just sat back and watched it happen.",
     name: "Greg T.",
     location: "Pasadena",
-    avatar: "https://framerusercontent.com/images/dG6aD2zu5wI4Ua89g2a4qj68Zc.png",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=96&h=96&q=80",
     rating: 4,
   },
   {
@@ -35,7 +35,7 @@ const testimonialsData = [
     quote: "It's rare to find a team this reliable and skilled — highly recommended to all!",
     name: "Melissa K.",
     location: "San Diego",
-    avatar: "https://framerusercontent.com/images/aBnNeR2QxjkJ88A7gRD7SjYc6uA.png",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&h=96&q=80",
     rating: 5,
   },
   {
@@ -43,7 +43,7 @@ const testimonialsData = [
     quote: "Outstanding workmanship and attention to detail. Our dream home became reality.",
     name: "Alex Peterson",
     location: "Beverly Hills",
-    avatar: "https://framerusercontent.com/images/15Lp1E78tHQQO5GUC5WbMqzR5U.png",
+    avatar: "https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&w=96&h=96&q=80",
     rating: 5,
   },
   {
@@ -51,7 +51,7 @@ const testimonialsData = [
     quote: "From start to finish, the team was professional, courteous and delivered on time.",
     name: "Sarah Chen",
     location: "San Francisco",
-    avatar: "https://framerusercontent.com/images/I8tA6fJg2iCEnJzD9EaGPlz4s.png",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&h=96&q=80",
     rating: 5,
   },
 ];
@@ -59,7 +59,7 @@ const testimonialsData = [
 const featuredTestimonial = {
   quote: "From the very first consultation, ASL Realtors felt like the right choice. The team was organized, transparent, and truly cared about the details. Our home feels brand new.",
   attribution: "- Tanya L., Irvine",
-  image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5b37b20a-86b6-49b1-af9d-5ab25a370d98-livohaus-framer-website/assets/images/ALuhYqQt02YcwXbLeX5vFlVW2c-14.jpeg",
+  image: "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1600&q=80",
 };
 
 const QuotationMark = ({ className }: { className?: string }) => (

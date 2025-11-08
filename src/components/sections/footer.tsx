@@ -61,7 +61,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-semibold leading-snug mb-8">
+            <h2 className="text-4xl md:text-5xl font-semibold mb-8">
               Your trusted partner in
               <br /> home renovation & interiors.
             </h2>
