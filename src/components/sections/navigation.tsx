@@ -87,9 +87,9 @@ export default function Navigation() {
         <Link
           href="/"
           className="flex items-center gap-3 transition-transform duration-300 hover:opacity-95"
-          aria-label="Livohaus home"
+          aria-label="ASL Realtors home"
         >
-          <span className={`text-2xl font-semibold tracking-wide ${baseTextColor}`}>Livohaus</span>
+          <span className={`text-2xl font-semibold tracking-wide ${baseTextColor}`}>ASL Realtors</span>
         </Link>
 
         <div className="hidden flex-1 items-center justify-center gap-12 lg:flex">

@@ -21,10 +21,12 @@ export default function ServicesHero() {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-3 bg-primary text-white font-medium py-4 px-8 rounded-full hover:bg-button-hover transition-colors"
+            className="request-quote-button"
           >
-            Request Free Quote
-            <ArrowRight className="w-5 h-5" />
+            <span className="request-quote-text">Request Free Quote</span>
+            <span className="request-quote-icon">
+              <ArrowRight className="w-5 h-5" />
+            </span>
           </a>
         </div>
       </div>

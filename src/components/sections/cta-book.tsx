@@ -94,7 +94,7 @@ const CtaBook = () => {
           className="text-lg text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed"
         >
           Let's bring your space to life with craftsmanship, clarity, and care.
-          Whether it&apos;s a full remodel or a custom home build, Livohaus
+          Whether it&apos;s a full remodel or a custom home build, ASL Realtors
           makes the process smooth, transparent, and beautifully executed.
         </motion.p>
 
@@ -106,17 +106,14 @@ const CtaBook = () => {
         >
           <motion.a
             href="#contact"
-            whileHover={{ scale: 1.05, y: -3 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-foreground text-base font-medium leading-tight rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl group"
+            whileHover={{ scale: 1.03, y: -3 }}
+            whileTap={{ scale: 0.97 }}
+            className="request-quote-button w-full sm:w-auto"
           >
-            Request Free Quote
-            <motion.div
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
+            <span className="request-quote-text">Request Free Quote</span>
+            <span className="request-quote-icon">
               <ArrowRight className="h-5 w-5" />
-            </motion.div>
+            </span>
           </motion.a>
 
           <motion.a

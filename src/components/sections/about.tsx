@@ -174,7 +174,7 @@ const AboutSection = () => {
               >
                 <Home className="w-5 h-5 text-primary" />
               </motion.div>
-              <h6 className="text-sm font-semibold uppercase tracking-[0.05em] text-primary">About Livohaus</h6>
+              <h6 className="text-sm font-semibold uppercase tracking-[0.05em] text-primary">About ASL Realtors</h6>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -190,7 +190,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-body-large text-text-body dark:text-neutral-400 transition-colors duration-300"
             >
-              At Livohaus, we specialize in bringing your renovation dreams to life — with thoughtful design, expert craftsmanship, and an obsessive attention to detail. Based in California and proudly serving homeowners since 2008, we're more than just a renovation firm.
+              At ASL Realtors, we specialize in bringing your renovation dreams to life — with thoughtful design, expert craftsmanship, and an obsessive attention to detail. Based in California and proudly serving homeowners since 2008, we're more than just a renovation firm.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

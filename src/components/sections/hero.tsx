@@ -11,7 +11,7 @@ const heroSlides = [
     image: "/hero-1.png",
     badge: "#1 Choice for Home Renovation in California",
     title: "Building Spaces That Reflect You — With Craft, Care and Complete Control",
-    description: "Livohaus transforms homes with timeless design, superior materials, and detail-driven construction — all managed with care from concept to completion.",
+    description: "ASL Realtors transforms homes with timeless design, superior materials, and detail-driven construction — all managed with care from concept to completion.",
   },
   {
     image: "/hero-2.webp",
@@ -121,12 +121,14 @@ const Hero = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.7, duration: 0.5 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-[#FF642F] to-[#FF4800] text-white font-medium py-4 px-8 rounded-full inline-flex items-center gap-3 hover:opacity-90 transition-colors duration-300 text-base leading-[1.2] shadow-lg hover:shadow-xl"
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="request-quote-button"
                 >
-                  Request Free Quote
-                  <ArrowRight className="w-5 h-5" />
+                  <span className="request-quote-text">Request Free Quote</span>
+                  <span className="request-quote-icon">
+                    <ArrowRight className="w-5 h-5" />
+                  </span>
                 </motion.a>
               </motion.div>
             </AnimatePresence>
@@ -178,7 +180,7 @@ const Hero = () => {
                 ))}
               </div>
               <p className="text-base text-white mb-4">
-                "Livohaus made our renovation easy and seamless. The results were better than we imagined, and the team was professional from start to finish."
+                "ASL Realtors made our renovation easy and seamless. The results were better than we imagined, and the team was professional from start to finish."
               </p>
               <p className="text-sm text-white/70">
                 - Jessica M., San Diego
