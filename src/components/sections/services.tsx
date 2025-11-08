@@ -78,14 +78,16 @@ const Services = () => {
               className="w-full lg:flex-1 lg:max-w-[480px]"
             >
               <p className="text-body-regular text-text-body dark:text-neutral-400 mb-8 transition-colors duration-300">
-                From design to delivery, we offer end-to-end solutions tailored to your space, style, and schedule. Whether you're updating one room or remodeling your entire home, Livohaus makes it seamless.
+                From design to delivery, we offer end-to-end solutions tailored to your space, style, and schedule. Whether you're updating one room or remodeling your entire home, ASL Realtors makes it seamless.
               </p>
               <Link
                 href="/#contact"
-                className="group relative inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#FF642F] to-[#FF4800] px-8 py-4 text-white transition-all duration-300 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF642F] focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0B0B0B] overflow-hidden hover:shadow-lg hover:-translate-y-1"
+                className="request-quote-button"
               >
-                <span className="relative z-10 btn-text">Request Free Quote</span>
-                <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <span className="request-quote-text">Request Free Quote</span>
+                <span className="request-quote-icon">
+                  <ArrowRight className="h-5 w-5" />
+                </span>
               </Link>
             </motion.div>
           </header>

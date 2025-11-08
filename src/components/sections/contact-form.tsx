@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { ArrowRight, Mail, Phone, FileText } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
@@ -286,18 +285,17 @@ const ContactFormSection = () => {
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 1.1 }}
               >
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full rounded-full group py-3 px-6 text-base font-semibold mt-2 bg-gradient-to-r from-[#FF642F] to-[#FF4800] text-white hover:opacity-90 transition-colors duration-300"
-                  >
-                    <span className="flex items-center justify-center gap-2">
-                      Request Free Quote
-                      <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                    </span>
-                  </Button>
-                </motion.div>
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="request-quote-button w-full justify-center mt-2"
+                >
+                  <span className="request-quote-text">Request Free Quote</span>
+                  <span className="request-quote-icon">
+                    <ArrowRight className="h-5 w-5" />
+                  </span>
+                </motion.button>
               </motion.div>
             </form>
           </motion.div>

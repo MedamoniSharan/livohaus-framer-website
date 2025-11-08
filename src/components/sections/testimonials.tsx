@@ -16,7 +16,7 @@ const testimonialsData = [
   },
   {
     id: 2,
-    quote: "Livohaus was professional, fast, and the final result truly blew us away. Fully Satisfied!",
+    quote: "ASL Realtors was professional, fast, and the final result truly blew us away. Fully Satisfied!",
     name: "Priya R.",
     location: "Sacramento",
     avatar: "https://framerusercontent.com/images/I8tA6fJg2iCEnJzD9EaGPlz4s.png",
@@ -57,7 +57,7 @@ const testimonialsData = [
 ];
 
 const featuredTestimonial = {
-  quote: "From the very first consultation, Livohaus felt like the right choice. The team was organized, transparent, and truly cared about the details. Our home feels brand new.",
+  quote: "From the very first consultation, ASL Realtors felt like the right choice. The team was organized, transparent, and truly cared about the details. Our home feels brand new.",
   attribution: "- Tanya L., Irvine",
   image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5b37b20a-86b6-49b1-af9d-5ab25a370d98-livohaus-framer-website/assets/images/ALuhYqQt02YcwXbLeX5vFlVW2c-14.jpeg",
 };
@@ -158,7 +158,7 @@ export default function Testimonials() {
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Real Stories from Homeowners Who Trusted Livohaus for Their Home Renovation
+              Real Stories from Homeowners Who Trusted ASL Realtors for Their Home Renovation
             </p>
           </div>
 

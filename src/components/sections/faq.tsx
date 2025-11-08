@@ -65,7 +65,7 @@ AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 const faqData = [
   {
     value: "item-1",
-    question: "How do I get started with Livohaus?",
+    question: "How do I get started with ASL Realtors?",
     answer: "Just fill out the contact form and we'll schedule a free consultation to understand your space, needs, and goals.",
   },
   {
@@ -81,7 +81,7 @@ const faqData = [
   {
     value: "item-4",
     question: "What areas do you serve?",
-    answer: "Livohaus proudly serves homeowners throughout California. If you are unsure whether your location falls within our service area, please don't hesitate to reach out and we will be happy to confirm.",
+    answer: "ASL Realtors proudly serves homeowners throughout California. If you are unsure whether your location falls within our service area, please don't hesitate to reach out and we will be happy to confirm.",
   },
   {
     value: "item-5",

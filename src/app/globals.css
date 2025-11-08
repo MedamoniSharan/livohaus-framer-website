@@ -277,6 +277,94 @@
   }
 }
 
+@layer components {
+  .request-quote-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0b0b0b;
+    background: #ffffff;
+    border: 1px solid rgba(11, 11, 11, 0.08);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+    will-change: color, box-shadow, transform;
+  }
+
+  .dark .request-quote-button {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .request-quote-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #ff642f 0%, #ff4800 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s ease;
+    will-change: transform;
+  }
+
+  .request-quote-button:hover::before,
+  .request-quote-button:focus-visible::before {
+    transform: scaleX(1);
+  }
+
+  .request-quote-button:hover,
+  .request-quote-button:focus-visible {
+    color: #ffffff;
+    box-shadow: 0 20px 45px rgba(255, 100, 47, 0.35);
+  }
+
+  .request-quote-button .request-quote-text,
+  .request-quote-button .request-quote-icon {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  }
+
+  .request-quote-button .request-quote-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #ff642f 0%, #ff4800 100%);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(255, 100, 47, 0.35);
+  }
+
+  .request-quote-button:hover .request-quote-icon,
+  .request-quote-button:focus-visible .request-quote-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    box-shadow: none;
+  }
+
+  .request-quote-button .request-quote-icon svg {
+    transition: transform 0.3s ease;
+  }
+
+  .request-quote-button:hover .request-quote-icon svg,
+  .request-quote-button:focus-visible .request-quote-icon svg {
+    transform: translateX(4px);
+  }
+
+  .request-quote-button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 100, 47, 0.18), 0 20px 45px rgba(255, 100, 47, 0.35);
+  }
+}
+
 /* Hide Next.js error overlay portal */
 nextjs-portal {
   display: none !important;
