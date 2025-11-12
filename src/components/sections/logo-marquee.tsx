@@ -20,7 +20,7 @@ export default function LogoMarquee() {
           transition={{ duration: 0.6 }}
           className="text-sm tracking-[0.2em] uppercase text-primary/70 dark:text-primary/60 mb-6"
         >
-          Trusted by homeowners, builders & partners
+          Our Clients
         </motion.p>
         <Marquee
           pauseOnHover

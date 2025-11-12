@@ -152,7 +152,7 @@ const Services = () => {
                 <h6 className="text-primary text-sm font-semibold uppercase tracking-[0.05em]">Our Services</h6>
               </motion.div>
               <h2 className="text-[48px] font-bold leading-[1.2] tracking-[-0.01em] text-current dark:text-white transition-colors duration-300">
-                Custom <span className="text-primary">Renovation</span> Services Designed to Fit Your Life
+                <span className="text-primary">Leased Out</span> properties
               </h2>
             </motion.div>
             <motion.div

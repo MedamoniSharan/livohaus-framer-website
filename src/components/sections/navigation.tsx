@@ -3,20 +3,29 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
+
+const SERVICES_LINKS = [
+  { href: "/services/industrial", label: "Industrial" },
+  { href: "/services/hospitality", label: "Hospitality" },
+  { href: "/services/warehouses", label: "Warehouses" },
+  { href: "/services/open-plots", label: "Open Plots" },
+  { href: "/services/office", label: "Office" },
+  { href: "/services/investments", label: "Investments" },
+];
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "Services", children: SERVICES_LINKS },
   { href: "/properties", label: "Properties" },
-  { href: "/calculators", label: "Calculators" },
-  { href: "#testimonials", label: "Testimonials" },
 ];
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   // Initialise theme based on saved preference or OS-level setting.
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     if (typeof window === "undefined") {
@@ -33,6 +42,7 @@ export default function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      setIsServicesOpen(false);
     };
 
     handleScroll();
@@ -51,6 +61,12 @@ export default function Navigation() {
   const handleThemeToggle = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      setIsMobileServicesOpen(false);
+    }
+  }, [isMenuOpen]);
 
   const headerClasses = [
     "fixed top-0 left-0 z-50 w-full flex justify-center px-4 sm:px-6 lg:px-12",
@@ -101,12 +117,46 @@ export default function Navigation() {
         </Link>
 
         <div className="hidden flex-1 items-center justify-center gap-12 lg:flex">
-          {NAV_LINKS.map(({ href, label }) => (
-            <Link key={label} href={href} className={linkClasses}>
-              {label}
-              <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-[#FF642F] transition-all duration-300 group-hover:w-8" />
-            </Link>
-          ))}
+          {NAV_LINKS.map(({ href, label, children }) =>
+            children ? (
+              <div key={label} className="relative">
+                <button
+                  type="button"
+                  className={`${linkClasses} inline-flex items-center gap-2`}
+                  onClick={() => setIsServicesOpen((prev) => !prev)}
+                  aria-expanded={isServicesOpen}
+                  aria-haspopup="true"
+                >
+                  {label}
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-300 ${isServicesOpen ? "rotate-180 text-[#FF642F]" : ""}`}
+                  />
+                </button>
+                <div
+                  className={`absolute left-1/2 top-full z-30 mt-3 w-64 -translate-x-1/2 rounded-2xl border border-white/30 bg-white/95 p-2 shadow-[0_18px_45px_rgba(0,0,0,0.12)] backdrop-blur-md transition-all duration-300 dark:border-white/10 dark:bg-neutral-900/95 ${
+                    isServicesOpen ? "pointer-events-auto opacity-100 translate-y-0" : "pointer-events-none opacity-0 -translate-y-2"
+                  }`}
+                >
+                  <div className="flex flex-col divide-y divide-black/5 text-left dark:divide-white/10">
+                    {children.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="px-4 py-3 text-sm font-semibold text-neutral-700 transition-colors hover:text-[#FF642F] dark:text-neutral-100"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link key={label} href={href} className={linkClasses}>
+                {label}
+                <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-[#FF642F] transition-all duration-300 group-hover:w-8" />
+              </Link>
+            )
+          )}
         </div>
 
         <div className="ml-auto hidden items-center space-x-3 lg:flex">
@@ -143,16 +193,53 @@ export default function Navigation() {
         style={{ fontFamily: '"Poppins","Inter",sans-serif', transitionDuration: "400ms" }}
       >
         <div className="flex flex-col gap-3 px-6 py-6 text-base font-medium uppercase tracking-[0.2em]">
-          {NAV_LINKS.map(({ href, label }) => (
-            <Link
-              key={label}
-              href={href}
-              onClick={() => setIsMenuOpen(false)}
-              className={mobileLinkClasses}
-            >
-              {label}
-            </Link>
-          ))}
+          {NAV_LINKS.map(({ href, label, children }) =>
+            children ? (
+              <div key={label} className="flex flex-col">
+                <button
+                  type="button"
+                  onClick={() => setIsMobileServicesOpen((prev) => !prev)}
+                  className={`${mobileLinkClasses} flex items-center justify-between gap-3`}
+                  aria-expanded={isMobileServicesOpen}
+                  aria-controls="mobile-services-menu"
+                >
+                  <span>{label}</span>
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-300 ${isMobileServicesOpen ? "rotate-180 text-[#FF642F]" : ""}`}
+                  />
+                </button>
+                <div
+                  id="mobile-services-menu"
+                  className={`flex flex-col overflow-hidden border-l border-white/20 pl-4 transition-all duration-300 ${
+                    isMobileServicesOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  {children.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsMobileServicesOpen(false);
+                      }}
+                      className="py-2 text-xs tracking-[0.16em] text-neutral-200 transition-colors hover:text-[#FF642F] dark:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={label}
+                href={href}
+                onClick={() => setIsMenuOpen(false)}
+                className={mobileLinkClasses}
+              >
+                {label}
+              </Link>
+            )
+          )}
           <button
             type="button"
             onClick={handleThemeToggle}
