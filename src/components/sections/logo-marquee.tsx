@@ -11,7 +11,6 @@ const logoFiles = [
   "logo3.jpeg",
   "logo4.jpeg",
   "logo5.jpeg",
-  "logo6.jpeg",
   "logo7.jpeg",
   "logo8.jpeg",
   "logo9.jpeg",
